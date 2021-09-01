@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Contato } from 'src/app/models/Contato';
+import { ContatoService } from 'src/app/services/contato.service';
 
 @Component({
   selector: 'app-lista-de-contatos',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaDeContatosComponent implements OnInit {
 
-  constructor() { }
+  contatos:Contato[] = [];
+  private cs:ContatoService = new ContatoService();
+
+  constructor() {
+    this.contatos = this.cs.getContatos();
+   }
 
   ngOnInit(): void {
   }

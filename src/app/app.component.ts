@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'contatos';
+  mostrandoModal = false;
+  show():void {
+    this.mostrandoModal=true;
+  }
+  hide():void {
+    this.mostrandoModal=false;
+  }
 }
