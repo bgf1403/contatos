@@ -1,67 +1,68 @@
 import { Injectable } from '@angular/core';
 import { Contato } from '../models/Contato';
 
+const BASE_DE_CONTATOS:Contato[] = [
+  {
+    nome: "Mariana Ribeiro 1",
+    email: "mariana@teste.com",
+    telefones: ['1111 - 1111','1111 - 1111','1111 - 1111']
+  },
+  {
+    nome: "Mariana Ribeiro 2",
+    email: "mariana@teste.com",
+    telefones: ['2222 - 2222']
+  },
+  {
+    nome: "Mariana Ribeiro 3",
+    email: "mariana@teste.com",
+    telefones: ['3333 - 3333']
+  },
+  {
+    nome: "Mariana Ribeiro 4",
+    email: "mariana@teste.com",
+    telefones: ['4444 - 4444']
+  },
+  {
+    nome: "Mariana Ribeiro 5",
+    email: "mariana@teste.com",
+    telefones: ['5555 - 5555']
+  },
+  {
+    nome: "Mariana Ribeiro 6",
+    email: "mariana@teste.com",
+    telefones: ['6666 - 6666']
+  },
+  {
+    nome: "Mariana Ribeiro 9",
+    email: "mariana@teste.com",
+    telefones: ['9999 - 9999']
+  },
+  {
+    nome: "Mariana Ribeiro 7",
+    email: "mariana@teste.com",
+    telefones: ['7777 - 7777']
+  },
+  {
+    nome: "Mariana Ribeiro 8",
+    email: "mariana@teste.com",
+    telefones: ['8888 - 8888']
+  },
+]
+
 @Injectable({
   providedIn: 'root'
 })
 export class ContatoService {
 
-  private contatos:Contato[] = [
-    {
-      nome:"Bruno Grassi Ferreira 1",
-      email: "bruno@teste.com",
-      telefones: ["11 1111-1111", "11 9 9111-1111"]
-    },
-    {
-      nome:"Bruno Grassi Ferreira 2",
-      email: "bruno@teste.com",
-      telefones: ["22 2222-2222", "22 9 9222-2222"]
-    },
-    {
-      nome:"Bruno Grassi Ferreira 3",
-      email: "bruno@teste.com",
-      telefones: ["33 3333-3333", "33 9 9333-3333"]
-    },
-    {
-      nome:"Bruno Grassi Ferreira 4",
-      email: "bruno@teste.com",
-      telefones: ["44 4444-4444", "44 9 9444-4444"]
-    },
-    {
-      nome:"Bruno Grassi Ferreira 5",
-      email: "bruno@teste.com",
-      telefones: ["55 5555-5555", "55 9 9555-5555"]
-    },
-    {
-      nome:"Bruno Grassi Ferreira 6",
-      email: "bruno@teste.com",
-      telefones: ["66 6666-6666", "66 9 9666-6666"]
-    },
-    {
-      nome:"Bruno Grassi Ferreira 7",
-      email: "bruno@teste.com",
-      telefones: ["77 7777-7777", "77 9 9777-7777"]
-    },
-    {
-      nome:"Bruno Grassi Ferreira 8",
-      email: "bruno@teste.com",
-      telefones: ["88 8888-8888", "88 9 9888-8888"]
-    },
-    {
-      nome:"Bruno Grassi Ferreira 9",
-      email: "bruno@teste.com",
-      telefones: ["99 9999-9999", "99 9 9999-9999"]
-    },
-    {
-      nome:"Bruno Grassi Ferreira 0",
-      email: "bruno@teste.com",
-      telefones: ["00 0000-0000", "00 9 9000-0000"]
-    },
-  ]
+  constructor() { }
 
   getContatos():Contato[] {
-    return this.contatos;
+    console.log(Math.random())
+    return BASE_DE_CONTATOS;
   }
 
-  constructor() { }
+  addContato(c:Contato): void {
+    BASE_DE_CONTATOS.push(c);
+  }
+
 }
